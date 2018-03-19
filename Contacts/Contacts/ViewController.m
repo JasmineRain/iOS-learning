@@ -85,13 +85,9 @@
 
 //-------
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 0) {
-        return 1;
-    } else {
-        NSDictionary *dict = self.demoArray[section];
-        NSMutableArray *array = dict[@"content"];
-        return [array count];
-    }
+    NSDictionary *dict = self.demoArray[section];
+    NSMutableArray *array = dict[@"content"];
+    return [array count];
 }
 
 //----------
