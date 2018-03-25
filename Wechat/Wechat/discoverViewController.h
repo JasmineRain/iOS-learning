@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface discoverViewController : UIViewController
-
+@interface discoverViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic,strong) UITableView *tableView;
 @end

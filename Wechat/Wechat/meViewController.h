@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface meViewController : UIViewController
-
+#import "customTableViewCell.h"
+@interface meViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) UITableView *tableView2;
 @end

@@ -33,21 +33,27 @@
     
     
     chatVC.navigationItem.title = @"Wechat(99+)";
-    chatVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Wechat" image:[UIImage imageNamed:@"code.png"] tag:0];
+    chatVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Wechat" image:[UIImage imageNamed:@"chat.png"] tag:0];
     contactsVC.navigationItem.title = @"Contacts";
-    contactsVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Contacts" image:[UIImage imageNamed:@"trust.png"] tag:1];
+    contactsVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Contacts" image:[UIImage imageNamed:@"addressbook.png"] tag:1];
     discoverVC.navigationItem.title = @"Discover";
-    discoverVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Wechat" image:[UIImage imageNamed:@"compass.png"] tag:2];
+    discoverVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Discover" image:[UIImage imageNamed:@"compass.png"] tag:2];
     meVC.navigationItem.title = @"Me";
-    meVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Me" image:[UIImage imageNamed:@"account.png"] tag:3];
-    
+    meVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Me" image:[UIImage imageNamed:@"people.png"] tag:3];
+    //meVC.tabBarItem.selectedImage = [UIImage imageNamed:@"people.png"];
     UINavigationController *chatNC = [[UINavigationController alloc] initWithRootViewController:chatVC];
     UINavigationController *contactsNC = [[UINavigationController alloc] initWithRootViewController:contactsVC];
     UINavigationController *discoverNC = [[UINavigationController alloc] initWithRootViewController:discoverVC];
     UINavigationController *meNC = [[UINavigationController alloc] initWithRootViewController:meVC];
     
+//    [chatNC.navigationBar setBackgroundColor:[UIColor blueColor]];
+//    [contactsNC.navigationBar setBackgroundColor:[UIColor blackColor]];
+//    [discoverNC.navigationBar setBackgroundColor:[UIColor blackColor]];
+//    [meNC.navigationBar setBackgroundColor:[UIColor blackColor]];
+    
     tabbarController.viewControllers = @[chatNC,contactsNC,discoverNC,meNC];
     
+    tabbarController.tabBar.tintColor = [UIColor greenColor];
     
     for (UINavigationController *controller in tabbarController.viewControllers) {
         UIView *view=controller.view;

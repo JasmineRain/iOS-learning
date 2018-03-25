@@ -9,7 +9,10 @@
 #import "contactsViewController.h"
 #import "sort.h"
 @interface contactsViewController ()
-
+@property(strong,nonatomic) customBtn* nf;
+@property(strong,nonatomic) customBtn* gc;
+@property(strong,nonatomic) customBtn* tags;
+@property(strong,nonatomic) customBtn* oa;
 @end
 
 @implementation contactsViewController
@@ -32,8 +35,38 @@
     
     self.demoArray=[self.boxdic allValues];
     self.demoArray = [self.demoArray arrayWithPinYinFirstLetterFormat];
-    NSLog(@"------  after sort ---------%@",self.demoArray);
-    self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 80, screen.size.width, screen.size.height-100) style:UITableViewStyleGrouped];
+    //NSLog(@"------  after sort ---------%@",self.demoArray);
+    
+//    UIButton *newFriends =[[UIButton alloc] initWithFrame:CGRectMake(0, 70, screen.size.width, 40)];
+//    [newFriends setTitle:@"New Friends" forState:UIControlStateNormal];
+//    [newFriends setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [newFriends setImage:[UIImage imageNamed:@"register.png"] forState:UIControlStateNormal];
+//    newFriends.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+//    [self.view addSubview:newFriends];
+    self.nf = [[customBtn alloc] initWithFrame:CGRectMake(0, 70, screen.size.width, 50)];
+    [self.nf setTitle:@"New Friends" forState:UIControlStateNormal];
+    [self.nf setImage:[UIImage imageNamed:@"register.png"] forState:UIControlStateNormal];
+    [self.nf addTarget:self action:@selector(nfPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.nf];
+    
+    UIView *horizontalLine1 = [[UIView alloc]initWithFrame:CGRectMake(15, 115, screen.size.width-30, 1)];
+    horizontalLine1.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:horizontalLine1];
+  
+    self.gc = [[customBtn alloc] initWithFrame:CGRectMake(0, 120, screen.size.width, 50)];
+    [self.gc setTitle:@"Group Chats" forState:UIControlStateNormal];
+    [self.gc setImage:[UIImage imageNamed:@"register.png"] forState:UIControlStateNormal];
+    [self.gc addTarget:self action:@selector(gcPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.gc];
+    UIView *horizontalLine2 = [[UIView alloc]initWithFrame:CGRectMake(15, 165, screen.size.width-30, 1)];
+    horizontalLine2.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:horizontalLine2];
+    
+    
+    
+    
+    
+    self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 180, screen.size.width, screen.size.height-100) style:UITableViewStyleGrouped];
     self.tableView.dataSource=self;
     self.tableView.delegate=self;
     self.tableView.sectionHeaderHeight = 30;
@@ -59,6 +92,7 @@
     NSDictionary *dict = self.demoArray[indexPath.section];
     NSMutableArray *array = dict[@"content"];
     cell.textLabel.text=[[array objectAtIndex:[indexPath row] ] objectForKey:@"Name"];
+    cell.imageView.image = [UIImage imageNamed:@"person.png"];
     return cell;
 }
 
@@ -85,7 +119,7 @@
     self.boxdic = [[NSMutableDictionary alloc] initWithContentsOfFile:self.boxpath];
     self.demoArray=[self.boxdic allValues];
     self.demoArray = [self.demoArray arrayWithPinYinFirstLetterFormat];
-    NSLog(@"****after reloading****,%@",self.demoArray);
+    //NSLog(@"****after reloading****,%@",self.demoArray);
     [self.tableView reloadData];
 }
 
@@ -119,14 +153,12 @@
         return [[UILocalizedIndexedCollation currentCollation] sectionForSectionIndexTitleAtIndex:index] - 1; // -1 添加了搜索标识
     }
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)nfPressed:(id)sender{
+    NSLog(@"new friends button preseed");
 }
-*/
 
+-(void)gcPressed:(id)sender{
+    NSLog(@"group chats button preseed");
+}
 @end

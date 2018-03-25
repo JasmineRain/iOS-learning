@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface chatViewController : UIViewController
-
+#import "customTableViewCell.h"
+@interface chatViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic,strong) UITableView *tableView;
 @end

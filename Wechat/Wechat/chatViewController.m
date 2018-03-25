@@ -18,20 +18,43 @@
     [super viewDidLoad];
     self.view.backgroundColor =[UIColor whiteColor];
     // Do any additional setup after loading the view.
-    //self.view.backgroundColor = [UIColor whiteColor];
-    //self.title= @"Wechat(99+)";
-    //self.navigationController.tabBarItem.title = @"Wechat";
-    //self.tabBarItem.image =[UIImage imageNamed:@"account.png"];
-    //self.title.
-    
-    //self.title = @"sdasdsa";
-    
+
+    CGRect screen=[[UIScreen mainScreen] bounds];
+    self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 60, screen.size.width, screen.size.height-100) style:UITableViewStylePlain];
+    self.tableView.dataSource=self;
+    self.tableView.delegate=self;
+    self.tableView.rowHeight = 70;
+    [self.view addSubview:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    customTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cusCell"];
+    if (cell == nil) {
+        cell = [[customTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cusCell"];
+    }
+    //    NSInteger rowIndex=[indexPath row];
+    cell.leftImage.image = [UIImage imageNamed:@"group-o.png"];
+    cell.leftImage.contentMode = UIViewContentModeScaleAspectFill;
+    cell.titleLabel.text = @"ID here";
+    cell.contentLabel.text = @"Content here";
+    cell.timeLabel.text = @"time";
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 13;
+}
+
+
 
 /*
 #pragma mark - Navigation
