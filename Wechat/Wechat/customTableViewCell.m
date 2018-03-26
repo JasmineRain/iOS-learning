@@ -26,6 +26,9 @@
     if (self) {
         CGRect screen = [[UIScreen mainScreen] bounds];
         self.leftImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
+        self.leftImage.contentMode = UIViewContentModeScaleAspectFill;
+        self.leftImage.clipsToBounds = YES;
+        [self.leftImage.layer setCornerRadius:10];
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 10, 200, 30)];
         self.contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 40, 200, 20)];
         self.contentLabel.font = [UIFont systemFontOfSize:15];

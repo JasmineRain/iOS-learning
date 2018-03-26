@@ -55,7 +55,7 @@
   
     self.gc = [[customBtn alloc] initWithFrame:CGRectMake(0, 120, screen.size.width, 50)];
     [self.gc setTitle:@"Group Chats" forState:UIControlStateNormal];
-    [self.gc setImage:[UIImage imageNamed:@"register.png"] forState:UIControlStateNormal];
+    [self.gc setImage:[UIImage imageNamed:@"function.png"] forState:UIControlStateNormal];
     [self.gc addTarget:self action:@selector(gcPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.gc];
     UIView *horizontalLine2 = [[UIView alloc]initWithFrame:CGRectMake(15, 165, screen.size.width-30, 1)];

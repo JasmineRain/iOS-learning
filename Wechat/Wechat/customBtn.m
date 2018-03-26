@@ -51,17 +51,17 @@
 }
 
 - (CGRect)imageRectForContentRect:(CGRect)contentRect{
-    CGFloat imageY = 0;
+    CGFloat imageY = 5;
     CGFloat imageX = 15;
-    CGFloat imageW = 40;
-    CGFloat imageH = 40;
+    CGFloat imageW = 30;
+    CGFloat imageH = 30;
     return CGRectMake(imageX, imageY, imageW, imageH);
 }
 
 - (CGRect)titleRectForContentRect:(CGRect)contentRect{
     CGFloat titleY = 15;
     CGFloat titleW = 200;
-    CGFloat titleX = 61;
+    CGFloat titleX = 55;
     CGFloat titleH = 15;
     return CGRectMake(titleX, titleY, titleW, titleH);
 }

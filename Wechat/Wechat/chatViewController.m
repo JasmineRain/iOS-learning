@@ -38,7 +38,7 @@
         cell = [[customTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cusCell"];
     }
     //    NSInteger rowIndex=[indexPath row];
-    cell.leftImage.image = [UIImage imageNamed:@"group-o.png"];
+    cell.leftImage.image = [UIImage imageNamed:@"dog.png"];
     cell.leftImage.contentMode = UIViewContentModeScaleAspectFill;
     cell.titleLabel.text = @"ID here";
     cell.contentLabel.text = @"Content here";
