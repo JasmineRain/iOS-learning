@@ -121,8 +121,8 @@
 -(void)finishButtonPressed:(id)sender{
     NSLog(@"finish button pressed");
     NSLog(@"%@",self.uuid);
-    NSLog(@"%@",self.self.name.text);
-    NSLog(@"%@",self.self.email.text);
+    NSLog(@"%@",self.name.text);
+    NSLog(@"%@",self.email.text);
     [self.boxdic setValue:@{@"UUID":self.uuid,@"Name":self.name.text,@"Email":self.email.text,@"PhoneNumber":self.phoneNumber.text} forKey:self.uuid];	
     [self.boxdic writeToFile:self.boxpath atomically:YES];
     [self.navigationController popViewControllerAnimated:YES];
