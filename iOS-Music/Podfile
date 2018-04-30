@@ -1,0 +1,3 @@
+target 'iOS-Music' do
+pod 'BmobSDK'
+end
