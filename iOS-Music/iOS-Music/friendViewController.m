@@ -18,6 +18,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    CGRect screen=[[UIScreen mainScreen] bounds];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, 100, screen.size.width-100, 50)];
+    label.font = [UIFont systemFontOfSize:15];
+    label.textColor = [UIColor grayColor];
+    label.text = @"功能未开放-orz";
+    label.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:label];
 }
 
 - (void)didReceiveMemoryWarning {

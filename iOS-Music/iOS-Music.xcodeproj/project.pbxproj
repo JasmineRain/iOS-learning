@@ -8,6 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		B0FF3448AD98F4EAC33F296C /* libPods-iOS-Music.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E1ADF1C88F5E641C0328FD /* libPods-iOS-Music.a */; };
+		FA2361FA209957C000180E0C /* sort.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2361F8209957C000180E0C /* sort.m */; };
+		FA2361FD2099594F00180E0C /* songCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2361FB2099594E00180E0C /* songCell.m */; };
+		FA23620020995AA200180E0C /* songViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2361FF20995AA200180E0C /* songViewController.m */; };
+		FA23620220998BE200180E0C /* 更多.png in Resources */ = {isa = PBXBuildFile; fileRef = FA23620120998BE200180E0C /* 更多.png */; };
+		FA2362042099996700180E0C /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2362032099996700180E0C /* back.png */; };
+		FA2362062099999E00180E0C /* 分享.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2362052099999E00180E0C /* 分享.png */; };
+		FA784A46209D490900D4D3CA /* discoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA784A45209D490900D4D3CA /* discoverViewController.m */; };
+		FA784A48209D507D00D4D3CA /* disc.png in Resources */ = {isa = PBXBuildFile; fileRef = FA784A47209D507D00D4D3CA /* disc.png */; };
+		FA784A4A209D50C900D4D3CA /* needle.png in Resources */ = {isa = PBXBuildFile; fileRef = FA784A49209D50C900D4D3CA /* needle.png */; };
+		FA784AAB209DA4FD00D4D3CA /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = FA784AA6209DA4FD00D4D3CA /* TFHpple.m */; };
+		FA784AAC209DA4FD00D4D3CA /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FA784AA8209DA4FD00D4D3CA /* TFHppleElement.m */; };
+		FA784AAD209DA4FD00D4D3CA /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = FA784AAA209DA4FD00D4D3CA /* XPathQuery.m */; };
+		FA784AAF209DA7D400D4D3CA /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FA784AAE209DA7D300D4D3CA /* libxml2.tbd */; };
+		FA784AB1209DA7F100D4D3CA /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FA784AB0209DA7F100D4D3CA /* libxml2.2.tbd */; };
+		FA784AB3209DB78E00D4D3CA /* defaultCover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA784AB2209DB78E00D4D3CA /* defaultCover.jpg */; };
 		FA9FB6F1208ECE4F00055061 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB6F0208ECE4F00055061 /* AppDelegate.m */; };
 		FA9FB6F7208ECE4F00055061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9FB6F5208ECE4F00055061 /* Main.storyboard */; };
 		FA9FB6FA208ECE4F00055061 /* iOS_Music.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB6F8208ECE4F00055061 /* iOS_Music.xcdatamodeld */; };
@@ -16,7 +31,6 @@
 		FA9FB702208ECE4F00055061 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB701208ECE4F00055061 /* main.m */; };
 		FA9FB70C208ECE4F00055061 /* iOS_MusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB70B208ECE4F00055061 /* iOS_MusicTests.m */; };
 		FA9FB717208ECE4F00055061 /* iOS_MusicUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB716208ECE4F00055061 /* iOS_MusicUITests.m */; };
-		FA9FB726208EF15100055061 /* discoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB725208EF15100055061 /* discoverViewController.m */; };
 		FA9FB729208EF16B00055061 /* videoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB728208EF16B00055061 /* videoViewController.m */; };
 		FA9FB72C208EF18200055061 /* mineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB72B208EF18200055061 /* mineViewController.m */; };
 		FA9FB72F208EF19200055061 /* friendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB72E208EF19200055061 /* friendViewController.m */; };
@@ -42,6 +56,19 @@
 		FA9FB7602092E7C900055061 /* 扫一扫.png in Resources */ = {isa = PBXBuildFile; fileRef = FA9FB75B2092E7C900055061 /* 扫一扫.png */; };
 		FA9FB7612092E7C900055061 /* 设置.png in Resources */ = {isa = PBXBuildFile; fileRef = FA9FB75C2092E7C900055061 /* 设置.png */; };
 		FA9FB7622092E7C900055061 /* 信息.png in Resources */ = {isa = PBXBuildFile; fileRef = FA9FB75D2092E7C900055061 /* 信息.png */; };
+		FAA5FE48209AE1D900D4899C /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA5FE47209AE1D900D4899C /* LaunchImage.png */; };
+		FAA5FE54209AEE1900D4899C /* 上一首.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA5FE49209AEE1600D4899C /* 上一首.png */; };
+		FAA5FE55209AEE1900D4899C /* 喜欢白.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA5FE4A209AEE1600D4899C /* 喜欢白.png */; };
+		FAA5FE56209AEE1900D4899C /* 播放列表.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA5FE4B209AEE1700D4899C /* 播放列表.png */; };
+		FAA5FE57209AEE1900D4899C /* 更多下.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA5FE4C209AEE1700D4899C /* 更多下.png */; };
+		FAA5FE58209AEE1900D4899C /* 喜欢红.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA5FE4D209AEE1700D4899C /* 喜欢红.png */; };
+		FAA5FE59209AEE1900D4899C /* 下一首.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA5FE4E209AEE1700D4899C /* 下一首.png */; };
+		FAA5FE5A209AEE1900D4899C /* 下载.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA5FE4F209AEE1700D4899C /* 下载.png */; };
+		FAA5FE5B209AEE1900D4899C /* 播放.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA5FE50209AEE1800D4899C /* 播放.png */; };
+		FAA5FE5C209AEE1900D4899C /* 随机播放.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA5FE51209AEE1800D4899C /* 随机播放.png */; };
+		FAA5FE5D209AEE1900D4899C /* 评论.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA5FE52209AEE1900D4899C /* 评论.png */; };
+		FAA5FE5E209AEE1900D4899C /* 暂停.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA5FE53209AEE1900D4899C /* 暂停.png */; };
+		FAA5FE62209B000500D4899C /* NSString+time.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5FE60209B000400D4899C /* NSString+time.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +92,28 @@
 		1BB13E3377B24C270E9B97A6 /* Pods-iOS-Music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Music.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-Music/Pods-iOS-Music.debug.xcconfig"; sourceTree = "<group>"; };
 		30E1ADF1C88F5E641C0328FD /* libPods-iOS-Music.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Music.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4396E87F8E54213B27B26BF6 /* Pods-iOS-Music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Music.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-Music/Pods-iOS-Music.release.xcconfig"; sourceTree = "<group>"; };
+		FA2361F8209957C000180E0C /* sort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sort.m; sourceTree = "<group>"; };
+		FA2361F9209957C000180E0C /* sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sort.h; sourceTree = "<group>"; };
+		FA2361FB2099594E00180E0C /* songCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = songCell.m; path = "../../../../../Downloads/iOS-learning-master/iOS-Music/iOS-Music/customAssets/songCell.m"; sourceTree = "<group>"; };
+		FA2361FC2099594F00180E0C /* songCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = songCell.h; path = "../../../../../Downloads/iOS-learning-master/iOS-Music/iOS-Music/customAssets/songCell.h"; sourceTree = "<group>"; };
+		FA2361FE20995AA200180E0C /* songViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = songViewController.h; sourceTree = "<group>"; };
+		FA2361FF20995AA200180E0C /* songViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = songViewController.m; sourceTree = "<group>"; };
+		FA23620120998BE200180E0C /* 更多.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "更多.png"; path = "../../../../../Downloads/更多.png"; sourceTree = "<group>"; };
+		FA2362032099996700180E0C /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		FA2362052099999E00180E0C /* 分享.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享.png"; sourceTree = "<group>"; };
+		FA784A44209D490900D4D3CA /* discoverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = discoverViewController.h; sourceTree = "<group>"; };
+		FA784A45209D490900D4D3CA /* discoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = discoverViewController.m; sourceTree = "<group>"; };
+		FA784A47209D507D00D4D3CA /* disc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disc.png; sourceTree = "<group>"; };
+		FA784A49209D50C900D4D3CA /* needle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = needle.png; sourceTree = "<group>"; };
+		FA784AA5209DA4FD00D4D3CA /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		FA784AA6209DA4FD00D4D3CA /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		FA784AA7209DA4FD00D4D3CA /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		FA784AA8209DA4FD00D4D3CA /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		FA784AA9209DA4FD00D4D3CA /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		FA784AAA209DA4FD00D4D3CA /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		FA784AAE209DA7D300D4D3CA /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		FA784AB0209DA7F100D4D3CA /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		FA784AB2209DB78E00D4D3CA /* defaultCover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = defaultCover.jpg; sourceTree = "<group>"; };
 		FA9FB6EC208ECE4F00055061 /* iOS-Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9FB6EF208ECE4F00055061 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA9FB6F0208ECE4F00055061 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -80,8 +129,6 @@
 		FA9FB712208ECE4F00055061 /* iOS-MusicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-MusicUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9FB716208ECE4F00055061 /* iOS_MusicUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_MusicUITests.m; sourceTree = "<group>"; };
 		FA9FB718208ECE4F00055061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA9FB724208EF15100055061 /* discoverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = discoverViewController.h; sourceTree = "<group>"; };
-		FA9FB725208EF15100055061 /* discoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = discoverViewController.m; sourceTree = "<group>"; };
 		FA9FB727208EF16B00055061 /* videoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = videoViewController.h; sourceTree = "<group>"; };
 		FA9FB728208EF16B00055061 /* videoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = videoViewController.m; sourceTree = "<group>"; };
 		FA9FB72A208EF18200055061 /* mineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mineViewController.h; sourceTree = "<group>"; };
@@ -113,6 +160,20 @@
 		FA9FB75B2092E7C900055061 /* 扫一扫.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扫一扫.png"; sourceTree = "<group>"; };
 		FA9FB75C2092E7C900055061 /* 设置.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置.png"; sourceTree = "<group>"; };
 		FA9FB75D2092E7C900055061 /* 信息.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "信息.png"; sourceTree = "<group>"; };
+		FAA5FE47209AE1D900D4899C /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LaunchImage.png; path = "iOS-Music/Assets.xcassets/LaunchImage.launchimage/LaunchImage.png"; sourceTree = SOURCE_ROOT; };
+		FAA5FE49209AEE1600D4899C /* 上一首.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "上一首.png"; sourceTree = "<group>"; };
+		FAA5FE4A209AEE1600D4899C /* 喜欢白.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "喜欢白.png"; sourceTree = "<group>"; };
+		FAA5FE4B209AEE1700D4899C /* 播放列表.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "播放列表.png"; sourceTree = "<group>"; };
+		FAA5FE4C209AEE1700D4899C /* 更多下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "更多下.png"; sourceTree = "<group>"; };
+		FAA5FE4D209AEE1700D4899C /* 喜欢红.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "喜欢红.png"; sourceTree = "<group>"; };
+		FAA5FE4E209AEE1700D4899C /* 下一首.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "下一首.png"; sourceTree = "<group>"; };
+		FAA5FE4F209AEE1700D4899C /* 下载.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "下载.png"; sourceTree = "<group>"; };
+		FAA5FE50209AEE1800D4899C /* 播放.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "播放.png"; sourceTree = "<group>"; };
+		FAA5FE51209AEE1800D4899C /* 随机播放.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "随机播放.png"; sourceTree = "<group>"; };
+		FAA5FE52209AEE1900D4899C /* 评论.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "评论.png"; sourceTree = "<group>"; };
+		FAA5FE53209AEE1900D4899C /* 暂停.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "暂停.png"; sourceTree = "<group>"; };
+		FAA5FE60209B000400D4899C /* NSString+time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+time.m"; sourceTree = "<group>"; };
+		FAA5FE61209B000500D4899C /* NSString+time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+time.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +181,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA784AB1209DA7F100D4D3CA /* libxml2.2.tbd in Frameworks */,
+				FA784AAF209DA7D400D4D3CA /* libxml2.tbd in Frameworks */,
 				B0FF3448AD98F4EAC33F296C /* libPods-iOS-Music.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +207,8 @@
 		36E05A1F1CE66D8A86699F6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA784AB0209DA7F100D4D3CA /* libxml2.2.tbd */,
+				FA784AAE209DA7D300D4D3CA /* libxml2.tbd */,
 				30E1ADF1C88F5E641C0328FD /* libPods-iOS-Music.a */,
 			);
 			name = Frameworks;
@@ -156,6 +221,28 @@
 				4396E87F8E54213B27B26BF6 /* Pods-iOS-Music.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA2361F7209957AD00180E0C /* sort */ = {
+			isa = PBXGroup;
+			children = (
+				FA2361F9209957C000180E0C /* sort.h */,
+				FA2361F8209957C000180E0C /* sort.m */,
+			);
+			path = sort;
+			sourceTree = "<group>";
+		};
+		FA784AA4209DA4FD00D4D3CA /* Hpple */ = {
+			isa = PBXGroup;
+			children = (
+				FA784AA5209DA4FD00D4D3CA /* TFHpple.h */,
+				FA784AA6209DA4FD00D4D3CA /* TFHpple.m */,
+				FA784AA7209DA4FD00D4D3CA /* TFHppleElement.h */,
+				FA784AA8209DA4FD00D4D3CA /* TFHppleElement.m */,
+				FA784AA9209DA4FD00D4D3CA /* XPathQuery.h */,
+				FA784AAA209DA4FD00D4D3CA /* XPathQuery.m */,
+			);
+			path = Hpple;
 			sourceTree = "<group>";
 		};
 		FA9FB6E3208ECE4F00055061 = {
@@ -183,6 +270,9 @@
 		FA9FB6EE208ECE4F00055061 /* iOS-Music */ = {
 			isa = PBXGroup;
 			children = (
+				FA784AA4209DA4FD00D4D3CA /* Hpple */,
+				FAA5FE5F209AFFF100D4899C /* util */,
+				FA2361F7209957AD00180E0C /* sort */,
 				FA9FB75120909AEC00055061 /* customAssets */,
 				FA9FB733208EF65700055061 /* icons */,
 				FA9FB6EF208ECE4F00055061 /* AppDelegate.h */,
@@ -194,8 +284,8 @@
 				FA9FB6FB208ECE4F00055061 /* Assets.xcassets */,
 				FA9FB6FD208ECE4F00055061 /* LaunchScreen.storyboard */,
 				FA9FB701208ECE4F00055061 /* main.m */,
-				FA9FB724208EF15100055061 /* discoverViewController.h */,
-				FA9FB725208EF15100055061 /* discoverViewController.m */,
+				FA784A44209D490900D4D3CA /* discoverViewController.h */,
+				FA784A45209D490900D4D3CA /* discoverViewController.m */,
 				FA9FB727208EF16B00055061 /* videoViewController.h */,
 				FA9FB728208EF16B00055061 /* videoViewController.m */,
 				FA9FB72A208EF18200055061 /* mineViewController.h */,
@@ -206,6 +296,8 @@
 				FA9FB731208EF19C00055061 /* accountViewController.m */,
 				FA9FB74E20908C2000055061 /* localMusicViewController.h */,
 				FA9FB74F20908C2000055061 /* localMusicViewController.m */,
+				FA2361FE20995AA200180E0C /* songViewController.h */,
+				FA2361FF20995AA200180E0C /* songViewController.m */,
 				FA9FB6F8208ECE4F00055061 /* iOS_Music.xcdatamodeld */,
 			);
 			path = "iOS-Music";
@@ -232,12 +324,30 @@
 		FA9FB733208EF65700055061 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				FA784AB2209DB78E00D4D3CA /* defaultCover.jpg */,
+				FA784A49209D50C900D4D3CA /* needle.png */,
+				FA784A47209D507D00D4D3CA /* disc.png */,
+				FAA5FE49209AEE1600D4899C /* 上一首.png */,
+				FAA5FE4E209AEE1700D4899C /* 下一首.png */,
+				FAA5FE4C209AEE1700D4899C /* 更多下.png */,
+				FAA5FE4B209AEE1700D4899C /* 播放列表.png */,
+				FAA5FE52209AEE1900D4899C /* 评论.png */,
+				FAA5FE51209AEE1800D4899C /* 随机播放.png */,
+				FAA5FE4D209AEE1700D4899C /* 喜欢红.png */,
+				FAA5FE4A209AEE1600D4899C /* 喜欢白.png */,
+				FAA5FE4F209AEE1700D4899C /* 下载.png */,
+				FAA5FE53209AEE1900D4899C /* 暂停.png */,
+				FAA5FE50209AEE1800D4899C /* 播放.png */,
+				FAA5FE47209AE1D900D4899C /* LaunchImage.png */,
+				FA23620120998BE200180E0C /* 更多.png */,
 				FA9FB75A2092E7C900055061 /* 商城.png */,
 				FA9FB75B2092E7C900055061 /* 扫一扫.png */,
 				FA9FB75C2092E7C900055061 /* 设置.png */,
 				FA9FB75D2092E7C900055061 /* 信息.png */,
 				FA9FB7592092E7C900055061 /* vip.png */,
+				FA2362032099996700180E0C /* back.png */,
 				FA9FB7552092C21A00055061 /* dog.png */,
+				FA2362052099999E00180E0C /* 分享.png */,
 				FA9FB747208F089700055061 /* 我的电台.png */,
 				FA9FB746208F089700055061 /* 我的收藏.png */,
 				FA9FB744208F089700055061 /* 本地音乐.png */,
@@ -256,10 +366,21 @@
 		FA9FB75120909AEC00055061 /* customAssets */ = {
 			isa = PBXGroup;
 			children = (
+				FA2361FC2099594F00180E0C /* songCell.h */,
+				FA2361FB2099594E00180E0C /* songCell.m */,
 				FA9FB75220909BE400055061 /* personalCell.h */,
 				FA9FB75320909BE400055061 /* personalCell.m */,
 			);
 			path = customAssets;
+			sourceTree = "<group>";
+		};
+		FAA5FE5F209AFFF100D4899C /* util */ = {
+			isa = PBXGroup;
+			children = (
+				FAA5FE61209B000500D4899C /* NSString+time.h */,
+				FAA5FE60209B000400D4899C /* NSString+time.m */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,8 +394,6 @@
 				FA9FB6E8208ECE4F00055061 /* Sources */,
 				FA9FB6E9208ECE4F00055061 /* Frameworks */,
 				FA9FB6EA208ECE4F00055061 /* Resources */,
-				3367CECA7194113E6D1635CA /* [CP] Embed Pods Frameworks */,
-				E10457B790023E28150B3627 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -371,25 +490,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA5FE48209AE1D900D4899C /* LaunchImage.png in Resources */,
+				FAA5FE5E209AEE1900D4899C /* 暂停.png in Resources */,
+				FAA5FE58209AEE1900D4899C /* 喜欢红.png in Resources */,
+				FAA5FE56209AEE1900D4899C /* 播放列表.png in Resources */,
 				FA9FB748208F089800055061 /* 本地音乐.png in Resources */,
 				FA9FB740208EFD5200055061 /* 云.png in Resources */,
+				FA784A4A209D50C900D4D3CA /* needle.png in Resources */,
 				FA9FB74A208F089800055061 /* 我的收藏.png in Resources */,
 				FA9FB75E2092E7C900055061 /* vip.png in Resources */,
+				FA23620220998BE200180E0C /* 更多.png in Resources */,
+				FA784A48209D507D00D4D3CA /* disc.png in Resources */,
 				FA9FB73B208EF7FA00055061 /* 音符.png in Resources */,
 				FA9FB7622092E7C900055061 /* 信息.png in Resources */,
+				FAA5FE59209AEE1900D4899C /* 下一首.png in Resources */,
 				FA9FB7562092C21A00055061 /* dog.png in Resources */,
 				FA9FB73A208EF7FA00055061 /* 视频.png in Resources */,
+				FA2362042099996700180E0C /* back.png in Resources */,
+				FAA5FE5A209AEE1900D4899C /* 下载.png in Resources */,
 				FA9FB74B208F089800055061 /* 我的电台.png in Resources */,
+				FAA5FE5B209AEE1900D4899C /* 播放.png in Resources */,
 				FA9FB6FF208ECE4F00055061 /* LaunchScreen.storyboard in Resources */,
 				FA9FB73C208EF7FA00055061 /* 账号.png in Resources */,
 				FA9FB741208EFD5200055061 /* 统计.png in Resources */,
+				FAA5FE54209AEE1900D4899C /* 上一首.png in Resources */,
 				FA9FB749208F089800055061 /* 最近播放.png in Resources */,
+				FA2362062099999E00180E0C /* 分享.png in Resources */,
+				FAA5FE5D209AEE1900D4899C /* 评论.png in Resources */,
 				FA9FB7612092E7C900055061 /* 设置.png in Resources */,
+				FAA5FE55209AEE1900D4899C /* 喜欢白.png in Resources */,
 				FA9FB7602092E7C900055061 /* 扫一扫.png in Resources */,
+				FA784AB3209DB78E00D4D3CA /* defaultCover.jpg in Resources */,
 				FA9FB6FC208ECE4F00055061 /* Assets.xcassets in Resources */,
 				FA9FB743208F067A00055061 /* functionList.plist in Resources */,
 				FA9FB75F2092E7C900055061 /* 商城.png in Resources */,
 				FA9FB6F7208ECE4F00055061 /* Main.storyboard in Resources */,
+				FAA5FE5C209AEE1900D4899C /* 随机播放.png in Resources */,
+				FAA5FE57209AEE1900D4899C /* 更多下.png in Resources */,
 				FA9FB739208EF7FA00055061 /* 朋友.png in Resources */,
 				FA9FB7582092CB6A00055061 /* accountFunctionList.plist in Resources */,
 				FA9FB73D208EF7FA00055061 /* 发现.png in Resources */,
@@ -431,36 +568,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3367CECA7194113E6D1635CA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS-Music/Pods-iOS-Music-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E10457B790023E28150B3627 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS-Music/Pods-iOS-Music-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -469,15 +576,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9FB72F208EF19200055061 /* friendViewController.m in Sources */,
+				FA23620020995AA200180E0C /* songViewController.m in Sources */,
 				FA9FB75020908C2000055061 /* localMusicViewController.m in Sources */,
 				FA9FB6F1208ECE4F00055061 /* AppDelegate.m in Sources */,
+				FAA5FE62209B000500D4899C /* NSString+time.m in Sources */,
 				FA9FB75420909BE400055061 /* personalCell.m in Sources */,
+				FA2361FD2099594F00180E0C /* songCell.m in Sources */,
+				FA2361FA209957C000180E0C /* sort.m in Sources */,
+				FA784AAC209DA4FD00D4D3CA /* TFHppleElement.m in Sources */,
 				FA9FB72C208EF18200055061 /* mineViewController.m in Sources */,
 				FA9FB729208EF16B00055061 /* videoViewController.m in Sources */,
+				FA784AAB209DA4FD00D4D3CA /* TFHpple.m in Sources */,
 				FA9FB702208ECE4F00055061 /* main.m in Sources */,
+				FA784A46209D490900D4D3CA /* discoverViewController.m in Sources */,
 				FA9FB732208EF19C00055061 /* accountViewController.m in Sources */,
-				FA9FB726208EF15100055061 /* discoverViewController.m in Sources */,
 				FA9FB6FA208ECE4F00055061 /* iOS_Music.xcdatamodeld in Sources */,
+				FA784AAD209DA4FD00D4D3CA /* XPathQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,7 +756,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/BmobSDK\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "iOS-Music/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.iOS-Music";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -656,7 +778,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/BmobSDK\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "iOS-Music/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.iOS-Music";
 				PRODUCT_NAME = "$(TARGET_NAME)";

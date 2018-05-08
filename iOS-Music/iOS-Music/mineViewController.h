@@ -11,7 +11,13 @@
 #import <BmobSDK/Bmob.h>
 @interface mineViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *functionList;
+@property (nonatomic, strong)AVPlayer *player;
 @property (nonatomic,strong) UITableView *songMenu;
 @property (nonatomic,strong) NSArray *listTeams;
-@property NSInteger num;
+@property (nonatomic,strong) NSArray *songList;
+@property (nonatomic,strong) NSArray *likeList;
+@property (nonatomic,strong) NSArray *recentList;
+@property NSInteger songNum;
+@property NSInteger likeNum;
+@property NSInteger recentNum;
 @end

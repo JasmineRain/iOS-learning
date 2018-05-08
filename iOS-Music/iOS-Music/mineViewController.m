@@ -20,8 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     CGRect screen=[[UIScreen mainScreen] bounds];
+    self.player = [[AVPlayer alloc]init];
     
-    UIColor *lightGrey= [UIColor colorWithRed:57/255.0 green:57/255.0 blue:57/255.0 alpha:1];
     
     self.view.backgroundColor = [UIColor whiteColor];
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"functionList" ofType:@"plist"];
@@ -35,12 +35,20 @@
     self.functionList.dataSource=self;
     [self.view addSubview:self.functionList];
     
-    
+    //for all list
     BmobQuery *bquery = [BmobQuery queryWithClassName:@"Music"];
     bquery.cachePolicy = kBmobCachePolicyNetworkElseCache;
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-        self.num = [array count];
-        //NSLog(@"%ld",num);
+        self.songNum = [array count];
+        self.songList = [NSArray arrayWithArray:array];
+    }];
+    
+    //for like list
+    BmobQuery *bquery2 = [BmobQuery queryWithClassName:@"Like"];
+    bquery2.cachePolicy = kBmobCachePolicyNetworkElseCache;
+    [bquery2 findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        self.likeNum = [array count];
+        self.likeList = [NSArray arrayWithArray:array];
     }];
     
 }
@@ -72,36 +80,49 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     localMusicViewController* localMusicVC = [[localMusicViewController alloc] init];
-    localMusicVC.title = @"本地音乐";
-    localMusicVC.num=self.num;
+    localMusicVC.player=self.player;
+    if(indexPath.row==0){
+        localMusicVC.title = @"本地音乐";
+        localMusicVC.num=self.songNum;
+        localMusicVC.songList = [NSArray arrayWithArray:self.songList];
+        localMusicVC.tableName=@"Music";
+    }
+    if(indexPath.row==3){
+        localMusicVC.title = @"我的收藏";
+        localMusicVC.num=self.likeNum;
+        localMusicVC.songList = [NSArray arrayWithArray:self.likeList];
+        localMusicVC.tableName=@"Like";
+    }
     switch (indexPath.row) {
         case 0:
+            NSLog(@"enter with tablename %ld",indexPath.row);
             [self.navigationController pushViewController:localMusicVC animated:YES];
             break;
-        default:
+        case 3:
+            NSLog(@"enter with tablename %ld",indexPath.row);
+            [self.navigationController pushViewController:localMusicVC animated:YES];
+//            BmobQuery *bquery2 = [BmobQuery queryWithClassName:@"Like"];
+//            bquery2.cachePolicy = kBmobCachePolicyNetworkElseCache;
+//            [bquery2 findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+//                self.likeNum = [array count];
+//                self.likeList = [NSArray arrayWithArray:array];
+//            }];
             break;
     }
 }
 
 
 - (void)viewWillAppear:(BOOL)animated{
-//    self.boxdic = [[NSMutableDictionary alloc] initWithContentsOfFile:self.boxpath];
-//    self.demoArray=[self.boxdic allValues];
-//    self.demoArray = [self.demoArray arrayWithPinYinFirstLetterFormat];
-//    NSLog(@"****after reloading****,%@",self.demoArray);
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"functionList" ofType:@"plist"];
     self.listTeams = [[NSArray alloc] initWithContentsOfFile:plistPath];
     [self.functionList reloadData];
+    BmobQuery *bquery2 = [BmobQuery queryWithClassName:@"Like"];
+    bquery2.cachePolicy = kBmobCachePolicyNetworkElseCache;
+    [bquery2 findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        self.likeNum = [array count];
+        self.likeList = [NSArray arrayWithArray:array];
+    }];
+    
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

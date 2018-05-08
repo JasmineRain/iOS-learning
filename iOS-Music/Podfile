@@ -1,3 +1,5 @@
 target 'iOS-Music' do
 pod 'BmobSDK'
+pod 'AFNetworking'
+pod 'SDWebImage', '~> 4.0'
 end
