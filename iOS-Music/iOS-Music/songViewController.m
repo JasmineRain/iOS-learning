@@ -18,8 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIColor *lightGrey= [UIColor colorWithRed:57/255.0 green:57/255.0 blue:57/255.0 alpha:1];
-    self.view.backgroundColor = lightGrey;
+    UIColor *lightGrey= [UIColor colorWithRed:37/255.0 green:37/255.0 blue:37/255.0 alpha:0.1];
+    UIColor *lightRed= [UIColor colorWithRed:213/255.0 green:59/255.0 blue:51/255.0 alpha:1];
+    
+    self.navigationController.navigationBar.barTintColor = lightRed;
+    
     CGRect screen=[[UIScreen mainScreen] bounds];
     self.isSliding=NO;
     
@@ -34,10 +37,10 @@
     self.disc = [[UIImageView alloc] initWithFrame:CGRectMake((screen.size.width-260)/2, 150, 260, 260)];
     [self.disc setImage:[UIImage imageNamed:@"disc.png"]];
     [self.view addSubview:self.disc];
-    self.coverImg = [[UIImageView alloc] initWithFrame:CGRectMake((screen.size.width-160)/2, 200, 160, 160)];
+    self.coverImg = [[UIImageView alloc] initWithFrame:CGRectMake((screen.size.width-180)/2, 190, 180, 180)];
     self.coverImg.layer.masksToBounds =YES;
     
-    self.coverImg.layer.cornerRadius =80;
+    self.coverImg.layer.cornerRadius =90;
     
     self.coverImg.contentMode = UIViewContentModeScaleAspectFill;
     self.coverImg.clipsToBounds=YES;
@@ -139,7 +142,7 @@
 
     
     [self adjustPics];
-    
+    [self updateInfo];
     
     //-------------------添加手势-------------------
     NSInteger directions[4] = {UISwipeGestureRecognizerDirectionRight,UISwipeGestureRecognizerDirectionLeft,UISwipeGestureRecognizerDirectionUp,UISwipeGestureRecognizerDirectionDown};
@@ -175,12 +178,12 @@
     CGFloat totalDuration = CMTimeGetSeconds(_playerItem.duration); // 总时间
     [self.loadedProgress setProgress:timeInterval / totalDuration animated:YES];
     
-    [self addObserverAndNotification]; // 添加观察者，发布通知
+    [self addObserver]; // 添加观察者，发布通知
     
 }
 
 //添加观察者和发布通知
-- (void)addObserverAndNotification {
+- (void)addObserver {
     [_playerItem addObserver:self forKeyPath:@"status" options:(NSKeyValueObservingOptionNew) context:nil]; // 观察status属性， 一共有三种属性
     [_playerItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil]; // 观察缓冲进度
     //[self monitoringPlayback:_playerItem]; // 监听播放
@@ -188,7 +191,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
 }
 
-- (void)removeObserveAndNotification {
+- (void)removeObserver {
     [_player replaceCurrentItemWithPlayerItem:nil];
     [_playerItem removeObserver:self forKeyPath:@"status"];
     [_playerItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
@@ -254,10 +257,7 @@
 
 // 获取已缓冲进度
 - (NSTimeInterval)availableDurationRanges {
-    NSArray *loadedTimeRanges = [_playerItem loadedTimeRanges]; // 获取item的缓冲数组
-    // discussion Returns an NSArray of NSValues containing CMTimeRanges
-    
-    // CMTimeRange 结构体 start duration 表示起始位置 和 持续时间
+    NSArray *loadedTimeRanges = [_playerItem loadedTimeRanges];
     CMTimeRange timeRange = [loadedTimeRanges.firstObject CMTimeRangeValue]; // 获取缓冲区域
     float startSeconds = CMTimeGetSeconds(timeRange.start);
     float durationSeconds = CMTimeGetSeconds(timeRange.duration);
@@ -274,9 +274,9 @@
 //返回按钮
 -(void)backBtnPressed:(id)sender{
     NSLog(@"return from songDetail");
-    if (self.delegate && [self.delegate respondsToSelector:@selector(changeNum:)]) {
-        [self.delegate changeNum:self.shouldMinus];
-    }
+//    if (self.delegate && [self.delegate respondsToSelector:@selector(changeNum:)]) {
+//        [self.delegate changeNum:self.shouldMinus];
+//    }
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -286,8 +286,11 @@
 }
 
 -(void)adjustPics{
+    
     if([self.isLike isEqualToString:@"YES"]){
         [self.likeBtn setImage:[UIImage imageNamed:@"喜欢红.png"] forState:UIControlStateNormal];
+    }else{
+        [self.likeBtn setImage:[UIImage imageNamed:@"喜欢白.png"] forState:UIControlStateNormal];
     }
 }
 
@@ -299,13 +302,15 @@
     }
     NSString *urlString = [NSString stringWithFormat:@"http://music.163.com/song/media/outer/url?id=%@",[self.songList[self.row] objectForKey:@"MusicId"] ];
     NSURL *url = [NSURL URLWithString:urlString];
-    [self removeObserveAndNotification];
+    [self removeObserver];
     [self pausedWithAnimated:YES];
     [self updatePlayerWithURL:url];
     [self updateInfo];
+    [self adjustPics];
+    
     [self.coverImg.layer removeAllAnimations];
     [self.coverImg.layer addAnimation:[self getAnimation] forKey:@"imageCover-layer"];
-    //[self playedWithAnimated:YES];
+    NSLog(@"%@",self.songId);
 }
 
 
@@ -317,13 +322,15 @@
     }
     NSString *urlString = [NSString stringWithFormat:@"http://music.163.com/song/media/outer/url?id=%@",[self.songList[self.row] objectForKey:@"MusicId"] ];
     NSURL *url = [NSURL URLWithString:urlString];
-    [self removeObserveAndNotification];
+    [self removeObserver];
     [self pausedWithAnimated:YES];
     [self updatePlayerWithURL:url];
-    [self updateInfo];
+    
     [self.coverImg.layer removeAllAnimations];
     [self.coverImg.layer addAnimation:[self getAnimation] forKey:@"imageCover-layer"];
-    //[self playedWithAnimated:YES];
+    [self updateInfo];
+    [self adjustPics];
+    NSLog(@"%@",self.songId);
 }
 
 //喜欢按钮
@@ -369,7 +376,6 @@
         }];
         
         self.isLike=@"YES";
-        
     }else{
         self.shouldMinus=@"YES";
         [self.likeBtn setImage:[UIImage imageNamed:@"喜欢白.png"] forState:UIControlStateNormal];
@@ -456,7 +462,6 @@
     view.center = CGPointMake (view.center.x - transition.x, view.center.y - transition.y);
 }
 
-// 播放音乐时，指针恢复，图片旋转
 - (void)playedWithAnimated:(BOOL)animated {
     
     if (self.isAnimation) return;
@@ -477,7 +482,6 @@
     [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
-// 停止音乐时，指针旋转-45°，图片停止旋转
 - (void)pausedWithAnimated:(BOOL)animated {
     if (!self.isAnimation) return;
     
@@ -502,11 +506,14 @@
 }
 
 -(void)dealloc{
-    [self removeObserveAndNotification];
+    [self removeObserver];
 }
 
 -(void)updateInfo{
     self.navigationItem.title = [self.songList[self.row] objectForKey:@"MusicName"];
+    self.musicId = [self.songList[self.row] objectForKey:@"MusicId"];
+    self.songId = [self.songList[self.row] objectId];
+    self.isLike = [self.songList[self.row] objectForKey:@"isLike"];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer     = [AFJSONRequestSerializer serializer];
@@ -530,9 +537,29 @@
         [self.coverImg sd_setImageWithURL:[NSURL URLWithString:self.imageUrl]
                          placeholderImage:[UIImage imageNamed:@"defaultCover.jpg"]];
         
+
+        NSURL* url = [NSURL URLWithString:self.imageUrl];
+        NSData* bgData = [NSData dataWithContentsOfURL:url];
+        
+        UIImageView *bgImgView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+        bgImgView.image = [[UIImage alloc] initWithData:bgData];
+        
+        bgImgView.tag = 1;
+        
+        UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+        UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
+        effectView.frame = CGRectMake(0, 0, bgImgView.frame.size.width, bgImgView.frame.size.height);
+        [bgImgView addSubview:effectView];
+        
+        UIView *subviews  = [self.view viewWithTag:1];
+        [subviews removeFromSuperview];
+        [self.view insertSubview:bgImgView atIndex:0];
+        
+        [self updateSong];
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"请求切换封面失败");
-        
+        [self updateSong];
     }];
 }
 
@@ -559,7 +586,7 @@
 
 
 -(void)foundSwiper:(UISwipeGestureRecognizer*)sender{
-    NSLog(@"direction = &li",sender.direction);
+    //NSLog(@"direction = &li",sender.direction);
     switch (sender.direction) {
         case UISwipeGestureRecognizerDirectionLeft:
             [self nextBtnPressed];
@@ -570,6 +597,15 @@
             break;
     }
     
+}
+
+-(void)updateSong{
+    BmobQuery *bquery = [BmobQuery queryWithClassName:@"Music"];
+    bquery.cachePolicy = kBmobCachePolicyNetworkElseCache;
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        //self.songNum = [array count];
+        self.songList = [NSArray arrayWithArray:array];
+    }];
 }
 
 @end

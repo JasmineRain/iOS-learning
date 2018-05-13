@@ -1,10 +1,3 @@
-//
-//  NSString+PinYin.m
-//  TableViewIndexTest
-//
-//  Created by Shadow on 14-3-5.
-//  Copyright (c) 2014年 Shadow. All rights reserved.
-//
 
 #import "sort.h"
 

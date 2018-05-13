@@ -15,6 +15,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     CGRect screen=[[UIScreen mainScreen] bounds];
@@ -30,13 +32,13 @@
     self.searchController.searchBar.scopeButtonTitles = @[@"中文",@"英文"];
     self.searchController.searchBar.delegate=self;
     
-    self.songTable.tableHeaderView = self.searchController.searchBar;
+    //self.songTable.tableHeaderView = self.searchController.searchBar;
     [self.searchController.searchBar sizeToFit];
     
     self.rc = [[UIRefreshControl alloc] init];
     self.rc.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
     [self.rc addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
-    //self.songTable.refreshControl = self.rc;
+    self.songTable.refreshControl = self.rc;
     
     self.songTable.delegate=self;
     self.songTable.dataSource=self;
@@ -94,8 +96,6 @@
         TFHpple *Hpple = [[TFHpple alloc]initWithHTMLData:data];
         NSArray *array =[Hpple searchWithXPathQuery:@"//img"];
         for (TFHppleElement *HppleElement in array) {
-            //NSLog(@"%ld",array.count);
-            //NSLog((@"测试2的目的标签内容:-- %@"), [HppleElement objectForKey:@"src"]);
             songDetail.imageUrl = [HppleElement objectForKey:@"src"];
             NSLog(@"from localVC %@",songDetail.imageUrl);
         }
@@ -105,7 +105,7 @@
         songDetail.songList = self.songList;
         songDetail.row = [indexPath row];
         songDetail.delegate=self;
-        //NSLog(@"%@  and songId is %@",songDetail.isLike,songDetail.songId);
+        
         [self.navigationController pushViewController:songDetail animated:YES];
         self.hidesBottomBarWhenPushed=NO;
         
@@ -136,7 +136,7 @@
     
     switch (scope) {
         case 0:
-            scopePredicate = [NSPredicate predicateWithFormat:@"%@  contains[c] %@",@"[SELF.data objectForKey:@'MusicName']",searchText];
+            scopePredicate = [NSPredicate predicateWithFormat:@"%K  contains[c] %@",@"\\ndata.MusicName",searchText];
             tempArray = [self.songList filteredArrayUsingPredicate:scopePredicate];
             self.songFiltedList = [NSMutableArray arrayWithArray:tempArray];
             self.num = self.songFiltedList.count;
@@ -144,7 +144,7 @@
             NSLog(@"%@",self.songFiltedList);
             break;
         case 1:
-            scopePredicate = [NSPredicate predicateWithFormat:@"SELF.className contains[c] %@",searchText];
+            scopePredicate = [NSPredicate predicateWithFormat:@"%K contains[c] %@",@"data.MusicName",searchText];
             tempArray = [self.songList filteredArrayUsingPredicate:scopePredicate];
             self.songFiltedList = [NSMutableArray arrayWithArray:tempArray];
             self.num = self.songFiltedList.count;
@@ -180,17 +180,21 @@
 -(void)viewWillAppear:(BOOL)animated{
     //reload data
     NSLog(@"localView will appear");
+    UIColor *lightRed= [UIColor colorWithRed:213/255.0 green:59/255.0 blue:51/255.0 alpha:1];
+    self.navigationController.navigationBar.barTintColor = lightRed;
     [self refreshTable];
 }
 
 -(void)refreshTable{
+    NSLog(@"refresh from %@",self.tableName);
     BmobQuery *bquery = [BmobQuery queryWithClassName:self.tableName];
     bquery.cachePolicy = kBmobCachePolicyNetworkElseCache;
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error){
         self.songList = [NSArray arrayWithArray:array];
+        self.num = self.songList.count;
+        [self.songTable reloadData];
         [self.rc endRefreshing];
     }];
-    [self.songTable reloadData];
 }
 
 //实现协议NextViewControllerDelegate中的方法
@@ -199,7 +203,7 @@
 
 - (void)changeNum:(NSString *)tfText{
     if([self.navigationItem.title isEqualToString:@"我的收藏"]&&[tfText isEqualToString:@"YES"]){
-        self.num--;
+        //self.num--;
     }
 }
 
